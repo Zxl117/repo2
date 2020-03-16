@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="BJ_WH">50.0dip</dimen>
+    <dimen name="Foot_Icon">25.0dip</dimen>
+    <dimen name="Foot_Icon1">20.0dip</dimen>
+    <dimen name="Head_Img">200.0dip</dimen>
+    <dimen name="Icon_Height">25.0dip</dimen>
+    <dimen name="JT_WH">15.0dip</dimen>
+    <dimen name="Line_Entry_Height">50.0dip</dimen>
+    <dimen name="Line_Height">40.0dip</dimen>
+    <dimen name="News_H">63.0dip</dimen>
+    <dimen name="News_W">96.0dip</dimen>
+    <dimen name="Padding_LR">10.0dip</dimen>
+    <dimen name="Product_H">72.0dip</dimen>
+    <dimen name="Product_Shop_H">76.79999dip</dimen>
+    <dimen name="Product_Shop_W">96.0dip</dimen>
+    <dimen name="Product_Type_H">60.0dip</dimen>
+    <dimen name="Product_Type_W">96.0dip</dimen>
+    <dimen name="Product_W">96.0dip</dimen>
+    <dimen name="Radio_H">40.0dip</dimen>
+    <dimen name="SY_H">54.0dip</dimen>
+    <dimen name="SY_W">90.0dip</dimen>
+    <dimen name="Title_Height">45.0dip</dimen>
+    <dimen name="ZhanHui_H">200.0dip</dimen>
+    <dimen name="activity_horizontal_margin">16.0dip</dimen>
+
+    <dimen name="activity_vertical_margin">16.0dip</dimen>
+
+</resources>

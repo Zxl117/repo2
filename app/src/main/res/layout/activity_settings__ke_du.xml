@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.Settings_BaoJingActivity">
+
+    <include layout="@layout/lay_title"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/Padding_LR"
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/LBlue"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/Padding_LR">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/shezhi" />
+
+            <TextView
+                android:id="@+id/tv_tag"
+                style="@style/Font_18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Padding_LR"
+                android:layout_weight="1"
+                android:text="刻度系数" />
+
+            <CheckBox
+                android:id="@+id/cb_kd"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:background="@drawable/rb_kaiguanselector"
+                android:button="@null" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+    <LinearLayout
+
+        android:id="@+id/linelayout_set"
+        android:gravity="center"
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+
+
+        <EditText
+            android:id="@+id/et_kdtext"
+            android:textColor="@color/APP"
+            android:gravity="center"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            style="@style/Font_18"
+          />
+
+        <TextView
+
+            android:id="@+id/tv_biaozhu"
+            style="@style/Font_Nomal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="注：设置范围为0.1~10" />
+
+        <Button
+            android:id="@+id/btn_kd_ok"
+            style="@style/Font_Btn"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/Line_Height"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/Padding_LR"
+            android:background="@drawable/btn_round_blue_bg2"
+            android:text="确定" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

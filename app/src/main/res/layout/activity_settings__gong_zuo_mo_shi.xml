@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.Settings_BaoJingActivity">
+
+    <include layout="@layout/lay_title"/>
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_marginTop="@dimen/Padding_LR"
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@drawable/bg_round_lblue_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/Padding_LR"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/shezhi"/>
+            <TextView
+                android:layout_marginLeft="@dimen/Padding_LR"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="剂量累加"
+                style="@style/Font_18"/>
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rb_danxuanselector"
+                android:button="@null"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/Padding_LR"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/shezhi"/>
+            <TextView
+                android:layout_marginLeft="@dimen/Padding_LR"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="剂量清零"
+                style="@style/Font_18"/>
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/rb_danxuanselector"
+                android:button="@null"/>
+        </LinearLayout>
+    </LinearLayout>
+    </RadioGroup>
+
+
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/Line_Height"
+        android:background="@drawable/btn_round_blue_bg2"
+        style="@style/Font_Btn"
+        android:text="确定"/>
+</LinearLayout>

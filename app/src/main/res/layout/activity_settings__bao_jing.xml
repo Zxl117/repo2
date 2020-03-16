@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.Settings_BaoJingActivity">
+
+    <include layout="@layout/lay_title"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/Padding_LR"
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@drawable/bg_round_lblue_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/Padding_LR"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/shezhi"/>
+            <TextView
+                android:id="@+id/tv_tag"
+                android:layout_marginLeft="@dimen/Padding_LR"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="剂量率"
+                style="@style/Font_18"/>
+
+            <CheckBox
+                android:id="@+id/cb_setswitch"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:background="@drawable/rb_kaiguanselector"
+                android:button="@null"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/lay_shichang"
+        android:gravity="center"
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <EditText
+            android:id="@+id/et_hour"
+            android:textColor="@color/APP"
+            android:gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            style="@style/Font_18"/>
+        <TextView
+            android:id="@+id/tv_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="h"
+            style="@style/Font_15"/>
+
+        <EditText
+            android:id="@+id/et_minute"
+            style="@style/Font_18"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/APP" />
+
+        <TextView
+            android:id="@+id/tv_minute"
+            style="@style/Font_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="m" />
+
+        <EditText
+            android:id="@+id/et_second"
+            android:textColor="@color/APP"
+            android:gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            style="@style/Font_18"/>
+        <TextView
+            android:id="@+id/tv_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="s"
+            style="@style/Font_15"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/lay_comm"
+        android:gravity="center"
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <EditText
+            android:id="@+id/et_input"
+            android:textColor="@color/APP"
+            android:gravity="center"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            style="@style/Font_18"/>
+         <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="uSv/h"
+            style="@style/Font_15"/>-->
+        <Spinner
+            android:id="@+id/id_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_p"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注：设置范围为0.1uSv/h~10Sv/h"
+        style="@style/Font_Nomal"/>
+
+
+
+
+    <Button
+        android:id="@+id/btn_certain"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/Line_Height"
+        android:background="@drawable/btn_round_blue_bg2"
+        style="@style/Font_Btn"
+        android:text="确定"/>
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

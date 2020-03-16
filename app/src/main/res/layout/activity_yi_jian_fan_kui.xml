@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.YiJianFanKuiActivity">
+    <include layout="@layout/lay_title"/>
+
+
+
+    <TextView
+        android:layout_marginTop="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="您的姓名："
+        style="@style/Font_15"
+        android:textColor="@color/APP_P"/>
+
+
+    <EditText
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/bg_round_gray_bg"
+        />
+
+    <TextView
+        android:layout_marginTop="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="联系方式："
+        style="@style/Font_15"
+        android:textColor="@color/APP_P"/>
+
+
+    <EditText
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/bg_round_gray_bg"
+        />
+
+    <TextView
+        android:layout_marginTop="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="建议反馈："
+        style="@style/Font_15"
+        android:textColor="@color/APP_P"/>
+
+
+    <EditText
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minLines="4"
+        android:background="@drawable/bg_round_gray_bg"
+        />
+
+
+
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/Line_Height"
+        android:background="@drawable/btn_round_blue_bg2"
+        style="@style/Font_Btn"
+        android:text="确定"/>
+
+
+
+
+
+</LinearLayout>

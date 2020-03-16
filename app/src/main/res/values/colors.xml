@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#689ACA</color>
+    <color name="colorPrimaryDark">#689ACA</color>
+    <color name="colorAccent">#ffe0e0e0</color>
+
+
+
+    <color name="APP">#008577</color>
+
+    <color name="White">#ffffff</color>
+    <color name="Black">#000000</color>
+    <color name="Line">#ffe0e0e0</color>
+    <color name="APP_P">#689ACA</color>
+    <color name="Foot_Gray">#ff9c9c9c</color>
+    <color name="Blue">#9BB7D2</color>
+    <color name="LBlue">#B2EEF8</color>
+    <color name="smssdk_text_green">#099A9F</color>
+</resources>

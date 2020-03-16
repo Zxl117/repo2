@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/White"
+    tools:context=".activity.SettingsActivity">
+
+    <include layout="@layout/lay_title"/>
+
+
+    <TextView
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Font_Nomal"
+        android:text="报警阀值设置，超阀值后报警"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@drawable/bg_round_lblue_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lay_jilianglv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/Padding_LR">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/shezhi" />
+
+            <TextView
+                style="@style/Font_18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Padding_LR"
+                android:layout_weight="1"
+                android:text="剂量率" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/right" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_jiliangleiji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/Padding_LR">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/shezhi" />
+
+            <TextView
+                style="@style/Font_18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Padding_LR"
+                android:layout_weight="1"
+                android:text="累积剂量" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/right" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_gongzuoshichang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/Padding_LR">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/shezhi" />
+
+            <TextView
+                style="@style/Font_18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/Padding_LR"
+                android:layout_weight="1"
+                android:text="工作时长" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/right" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Font_Nomal"
+        android:text="工作模式默认为剂量累加"/>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@drawable/bg_round_lblue_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/lay_moshi"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/Padding_LR"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/shezhi"/>
+            <TextView
+                android:layout_marginLeft="@dimen/Padding_LR"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="工作模式"
+                style="@style/Font_18"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/right"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Font_Nomal"
+        android:text="刻度系数默认为1"/>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@drawable/bg_round_lblue_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/lay_kedu"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/Padding_LR"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/shezhi"/>
+            <TextView
+                android:layout_marginLeft="@dimen/Padding_LR"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="刻度系数"
+                style="@style/Font_18"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/right"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+    <TextView
+        android:layout_margin="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Font_Nomal"
+        android:text="测量时"/>
+
+    <LinearLayout
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@drawable/bg_round_lblue_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/Padding_LR"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/shezhi"/>
+            <TextView
+                android:layout_marginLeft="@dimen/Padding_LR"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="屏幕常亮"
+                style="@style/Font_18"/>
+            <CheckBox
+                android:id="@+id/cb_isscreenbright"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:background="@drawable/rb_kaiguanselector"
+                android:button="@null"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    </LinearLayout>

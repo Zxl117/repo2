@@ -1,0 +1,63 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/Blue</item>
+        <item name="colorPrimaryDark">@color/Blue</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="Translucent_NoTitle" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item> <!-- 设置自定义布局的背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>  <!-- 设置window背景透明，也就是去边框 -->
+    </style>
+
+
+
+    <style name="Font_151">
+
+        <item name="android:textSize">15.0sp</item>
+    </style>
+
+
+
+    <style name="Font_15">
+        <item name="android:textSize">15.0sp</item>
+    </style>
+    <style name="Font_18">
+        <item name="android:textSize">18.0sp</item>
+    </style>
+
+    <style name="Font_BJ">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:layout_marginLeft">5.0sp</item>
+    </style>
+    <style name="Font_Btn">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:layout_height">40.0dip</item>
+    </style>
+    <style name="Font_Date">
+        <item name="android:textSize">20.0sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="Font_Nomal">
+        <item name="android:textSize">14.0sp</item>
+    </style>
+    <style name="Font_ShouYe">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:layout_marginTop">10.0sp</item>
+    </style>
+    <style name="Font_Title">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="Foot_Font">
+        <item name="android:textSize">11.0sp</item>
+    </style>
+
+</resources>

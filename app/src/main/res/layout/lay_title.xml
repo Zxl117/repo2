@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="top" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@+id/rl_title" android:background="@color/White" android:layout_width="fill_parent" android:layout_height="@dimen/Title_Height">
+
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/img_left"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/Padding_LR"
+            ></ImageView>
+
+
+
+        <Button android:id="@+id/btn_back" android:background="@mipmap/fanhui" android:layout_width="45.0dip" android:layout_height="fill_parent" android:onClick="On_Back" />
+        <TextView android:id="@+id/tv_title" android:textColor="@color/Black" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/Font_Title" />
+
+
+        <Spinner android:id="@+id/spnner"  android:textColor="@color/Black" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true"  />
+
+
+        <TextView android:id="@+id/tv_right"  android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_marginRight="10dp" style="@style/Font_15" />
+
+
+
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/img_conn"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="60dp"
+            android:src="@mipmap/lanya"
+            ></ImageView>
+
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/img_right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/Padding_LR"
+            ></ImageView>
+
+
+
+    </RelativeLayout>
+    <View android:background="@color/Line" android:id="@+id/view_line" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+</LinearLayout>

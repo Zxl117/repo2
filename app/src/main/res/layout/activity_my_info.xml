@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/White"
+    tools:context=".activity.MyInfoActivity">
+
+
+    <include layout="@layout/lay_title"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:padding="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="头像"/>
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/touxiang"/>
+
+        <ImageView
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/right"/>
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/APP_P"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:padding="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="昵称"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="xxx"
+            />
+
+        <ImageView
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/right"/>
+
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/APP_P"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:padding="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="电话"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="131xxxx1111"
+            />
+
+        <ImageView
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/right"/>
+
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/APP_P"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:padding="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="性别"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="女"
+            />
+
+        <ImageView
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/right"/>
+
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/APP_P"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:padding="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="生日"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="1994/12/1"
+            />
+
+        <ImageView
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/right"/>
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/APP_P"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:padding="@dimen/Padding_LR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="地区"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Font_15"
+            android:textColor="@color/APP_P"
+            android:text="四川/成都"
+            />
+
+        <ImageView
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/right"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
