@@ -4,258 +4,223 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/White"
+    android:orientation="vertical"
     tools:context=".activity.MyInfoActivity">
 
 
-    <include layout="@layout/lay_title"/>
+    <include layout="@layout/lay_title" />
 
     <LinearLayout
-        android:gravity="center_vertical"
-        android:padding="@dimen/Padding_LR"
+        android:id="@+id/ll_headimg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/Padding_LR"
+        >
 
         <TextView
+            style="@style/Font_18"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            style="@style/Font_15"
+            android:layout_weight="1"
+            android:text="头像"
             android:textColor="@color/APP_P"
-            android:text="头像"/>
+            android:textStyle="bold" />
 
 
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@mipmap/touxiang"/>
+            android:src="@mipmap/touxiang" />
 
         <ImageView
-            android:layout_marginLeft="@dimen/Padding_LR"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:src="@mipmap/right"/>
-
-
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:src="@mipmap/right" />
 
 
     </LinearLayout>
 
     <View
-        android:layout_marginLeft="@dimen/Padding_LR"
-        android:layout_marginRight="@dimen/Padding_LR"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/APP_P"/>
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@color/APP_P" />
 
     <LinearLayout
-        android:gravity="center_vertical"
-        android:padding="@dimen/Padding_LR"
+        android:id="@+id/ll_nickname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/Padding_LR">
 
         <TextView
+            style="@style/Font_18"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            style="@style/Font_15"
+            android:layout_weight="1"
+            android:text="昵称"
             android:textColor="@color/APP_P"
-            android:text="昵称"/>
+            android:textStyle="bold" />
 
 
         <TextView
+            android:id="@+id/tv_nickname"
+            style="@style/Font_18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           style="@style/Font_15"
-            android:textColor="@color/APP_P"
             android:text="xxx"
-            />
+            android:textColor="@color/APP_P" />
 
         <ImageView
-            android:layout_marginLeft="@dimen/Padding_LR"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:src="@mipmap/right"/>
-
-
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:src="@mipmap/right" />
 
 
     </LinearLayout>
 
 
     <View
-        android:layout_marginLeft="@dimen/Padding_LR"
-        android:layout_marginRight="@dimen/Padding_LR"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/APP_P"/>
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@color/APP_P" />
 
     <LinearLayout
-        android:gravity="center_vertical"
-        android:padding="@dimen/Padding_LR"
+        android:id="@+id/ll_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/Padding_LR">
 
         <TextView
+            style="@style/Font_18"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            style="@style/Font_15"
+            android:layout_weight="1"
+            android:text="电话"
             android:textColor="@color/APP_P"
-            android:text="电话"/>
+            android:textStyle="bold" />
 
 
         <TextView
+            android:id="@+id/tv_phonenumber"
+            style="@style/Font_18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Font_15"
-            android:textColor="@color/APP_P"
             android:text="131xxxx1111"
-            />
+            android:textColor="@color/APP_P" />
 
         <ImageView
-            android:layout_marginLeft="@dimen/Padding_LR"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:src="@mipmap/right"/>
-
-
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:src="@mipmap/right" />
 
 
     </LinearLayout>
 
 
     <View
-        android:layout_marginLeft="@dimen/Padding_LR"
-        android:layout_marginRight="@dimen/Padding_LR"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/APP_P"/>
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@color/APP_P" />
 
     <LinearLayout
-        android:gravity="center_vertical"
-        android:padding="@dimen/Padding_LR"
+        android:id="@+id/ll_sex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/Padding_LR">
 
         <TextView
+            style="@style/Font_18"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            style="@style/Font_15"
+            android:layout_weight="1"
+            android:text="性别"
             android:textColor="@color/APP_P"
-            android:text="性别"/>
+            android:textStyle="bold" />
 
 
         <TextView
+            android:id="@+id/tv_sex"
+            style="@style/Font_18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Font_15"
-            android:textColor="@color/APP_P"
             android:text="女"
-            />
+            android:textColor="@color/APP_P" />
 
         <ImageView
-            android:layout_marginLeft="@dimen/Padding_LR"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:src="@mipmap/right"/>
-
-
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:src="@mipmap/right" />
 
 
     </LinearLayout>
 
 
     <View
-        android:layout_marginLeft="@dimen/Padding_LR"
-        android:layout_marginRight="@dimen/Padding_LR"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/APP_P"/>
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@color/APP_P" />
 
     <LinearLayout
-        android:gravity="center_vertical"
-        android:padding="@dimen/Padding_LR"
+        android:id="@+id/ll_birthday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/Padding_LR">
 
         <TextView
+            style="@style/Font_18"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            style="@style/Font_15"
+            android:layout_weight="1"
+            android:text="生日"
             android:textColor="@color/APP_P"
-            android:text="生日"/>
+            android:textStyle="bold" />
 
 
         <TextView
+            android:id="@+id/tv_birthday"
+            style="@style/Font_18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Font_15"
-            android:textColor="@color/APP_P"
             android:text="1994/12/1"
-            />
+            android:textColor="@color/APP_P" />
 
         <ImageView
-            android:layout_marginLeft="@dimen/Padding_LR"
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:src="@mipmap/right"/>
-
-
+            android:layout_marginLeft="@dimen/Padding_LR"
+            android:src="@mipmap/right" />
 
 
     </LinearLayout>
 
     <View
-        android:layout_marginLeft="@dimen/Padding_LR"
-        android:layout_marginRight="@dimen/Padding_LR"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/APP_P"/>
-
-    <LinearLayout
-        android:gravity="center_vertical"
-        android:padding="@dimen/Padding_LR"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            style="@style/Font_15"
-            android:textColor="@color/APP_P"
-            android:text="地区"/>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Font_15"
-            android:textColor="@color/APP_P"
-            android:text="四川/成都"
-            />
-
-        <ImageView
-            android:layout_marginLeft="@dimen/Padding_LR"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@mipmap/right"/>
-
-
-
-
-    </LinearLayout>
-
+        android:layout_marginLeft="@dimen/Padding_LR"
+        android:layout_marginRight="@dimen/Padding_LR"
+        android:background="@color/APP_P" />
 
 
 </LinearLayout>
