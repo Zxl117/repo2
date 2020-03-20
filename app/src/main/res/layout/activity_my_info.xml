@@ -10,37 +10,40 @@
 
 
     <include layout="@layout/lay_title" />
-
     <LinearLayout
-        android:id="@+id/ll_headimg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="@dimen/Padding_LR"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:gravity="center"
         >
 
-        <TextView
-            style="@style/Font_18"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="头像"
-            android:textColor="@color/APP_P"
-            android:textStyle="bold" />
 
+
+
+        <FrameLayout
+
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+
+
+
+        <com.Z.project.view.RoundImageView
+            android:layout_gravity="center"
+            app:type="circle"
+            android:src="@mipmap/touxiang"
+            android:id="@+id/img_head"
+            android:layout_width="90dp"
+            android:layout_height="90dp">
+
+        </com.Z.project.view.RoundImageView>
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@mipmap/touxiang" />
-
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="@dimen/Padding_LR"
-            android:src="@mipmap/right" />
-
+            android:layout_gravity="bottom|right"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/paizhao"
+            ></ImageView>
+        </FrameLayout>
 
     </LinearLayout>
 
@@ -57,7 +60,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/Padding_LR">
+        android:padding="@dimen/Padding_LR"
+        >
 
         <TextView
             style="@style/Font_18"
@@ -65,7 +69,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="昵称"
-            android:textColor="@color/APP_P"
             android:textStyle="bold" />
 
 
@@ -75,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="xxx"
-            android:textColor="@color/APP_P" />
+            android:textColor="@color/Black" />
 
         <ImageView
             android:layout_width="15dp"
@@ -108,7 +111,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="电话"
-            android:textColor="@color/APP_P"
             android:textStyle="bold" />
 
 
@@ -117,8 +119,8 @@
             style="@style/Font_18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="131xxxx1111"
-            android:textColor="@color/APP_P" />
+            android:text="1584866600"
+            android:textColor="@color/Black" />
 
         <ImageView
             android:layout_width="15dp"
@@ -151,7 +153,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="性别"
-            android:textColor="@color/APP_P"
             android:textStyle="bold" />
 
 
@@ -161,7 +162,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="女"
-            android:textColor="@color/APP_P" />
+            android:textColor="@color/Black" />
 
         <ImageView
             android:layout_width="15dp"
@@ -194,7 +195,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="生日"
-            android:textColor="@color/APP_P"
             android:textStyle="bold" />
 
 
@@ -204,7 +204,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1994/12/1"
-            android:textColor="@color/APP_P" />
+            android:textColor="@color/Black" />
 
         <ImageView
             android:layout_width="15dp"
