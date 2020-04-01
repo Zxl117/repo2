@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 
 import com.Z.project.R;
+import com.Z.project.database.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,9 +49,10 @@ public class BaseActivity extends FragmentActivity {
                // Utils.showToast(getApplicationContext(), "\u6743\u9650\u5df2\u88ab\u62d2\u7edd\uff0c\u8bf7\u5728\u8bbe\u7f6e\u4e2d\u5fc3\u8fdb\u884c\u6388\u6743");
             }
         });
-
+        DatabaseHelper helper=new DatabaseHelper(this);
+        helper.getWritableDatabase();
+        helper.getReadableDatabase();
         currActivity=this;
-
 
     }
 

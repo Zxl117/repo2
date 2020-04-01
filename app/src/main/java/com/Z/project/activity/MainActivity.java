@@ -113,6 +113,7 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
         HiddenBtnBack();
         init();  //初始化数据
+
     }
 
     @Override

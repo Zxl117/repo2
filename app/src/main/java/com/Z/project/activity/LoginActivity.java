@@ -4,9 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.Z.project.R;
+import com.Z.project.database.User;
+import com.Z.project.database.UserService;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,6 +23,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     TextView tvWangji;
     @BindView(R.id.tv_zhuce)
     TextView tvZhuce;
+    @BindView(R.id.et_phone)
+    EditText et_phone;
+    @BindView(R.id.et_pwd)
+    EditText et_pwd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +46,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
     private void init(){
 
-
-
-        btnLogin.setOnClickListener(this);
+       btnLogin.setOnClickListener(this);
         tvWangji.setOnClickListener(this);
         tvZhuce.setOnClickListener(this);
-
-
 
 
 
@@ -52,11 +57,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
-
         switch (v.getId()){
 
             case R.id.btn_login:
-                startActivity(new Intent(this,MainActivity.class));
+                login();
+
                 break;
             case R.id.tv_zhuce:
                 startActivity(new Intent(this,ZhuCe2Activity.class));
@@ -64,9 +69,25 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
             case R.id.tv_wangji:
                 startActivity(new Intent(this,WangJiMiMaActivity.class));
                 break;
-
         }
+    }
 
+    private void login() {
+        User user=new User();
+        String name =et_phone.getText().toString().trim();
+        String password=et_pwd.getText().toString().trim();
+        user.setAccount(name);
+        user.setPassword(password);
+        UserService service=new UserService(getApplicationContext());
+       if (service.login(name,password))
+       {
+           startActivity(new Intent(this,MainActivity.class));
+       }
+       else
+       {
+           Toast.makeText(getApplicationContext(),"账号或密码错误请重新登录",Toast.LENGTH_SHORT).show();
+
+       }
 
     }
 }

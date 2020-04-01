@@ -1,6 +1,7 @@
 package com.Z.project.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -21,11 +22,12 @@ import android.widget.Toast;
 
 import com.Z.project.R;
 
+import com.Z.project.database.User;
+import com.Z.project.database.UserService;
 import com.mob.tools.utils.ResHelper;
 import com.mob.tools.utils.SharePrefrenceHelper;
 
 import org.json.JSONObject;
-
 
 
 import butterknife.BindView;
@@ -40,15 +42,14 @@ public class ZhuCe2Activity extends BaseActivity implements View.OnClickListener
     /**
      * 验证页，包括短信验证和语音验证，默认使用中国区号
      */
-    private static final String TAG ="ZhuCe2Activity" ;
+    private static final String TAG = "ZhuCe2Activity";
     private static final String KEY_START_TIME = "start_time";
     private SharePrefrenceHelper helper;
     private EventHandler eventHandler;
-    private static final int REQUEST_CODE_VERIFY = 1001;
+  //  private static final int REQUEST_CODE_VERIFY = 1001;
     private int currentSecond;
     private Toast toast;
     private static final int COUNTDOWN = 60;
-    private static final String TEMP_CODE = "1319972";
     private Handler handler;
     @BindView(R.id.et_phone)
     EditText etPhone;
@@ -64,10 +65,7 @@ public class ZhuCe2Activity extends BaseActivity implements View.OnClickListener
     TextView tvXieyi;
     @BindView(R.id.btnVerify)
     Button btnVerify;
-
     TextView tvToast;
-
-
 
 
     @Override
@@ -93,7 +91,6 @@ public class ZhuCe2Activity extends BaseActivity implements View.OnClickListener
         }
         SMSSDK.unregisterEventHandler(eventHandler);
     }
-
 
 
     private void initListener() {
@@ -125,10 +122,12 @@ public class ZhuCe2Activity extends BaseActivity implements View.OnClickListener
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
-            //验证码输入6位并且手机大于5位，验证按钮可点击
+
+            //验证码输入4位并且手机大于5位，验证按钮可点击
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                btnVerify.setEnabled(etCode.getText() != null && etCode.getText().length() >= 6 && etPhone.getText() != null && etPhone.getText().length() > 5);
+                btnVerify.setEnabled(etCode.getText() != null && etCode.getText().length() >= 4 &&
+                        etPhone.getText() != null && etPhone.getText().length() > 5 && etRpwd.getText() != null && etRpwd.getText().length() >= 8);
             }
 
             @Override
@@ -156,7 +155,30 @@ public class ZhuCe2Activity extends BaseActivity implements View.OnClickListener
         eventHandler = new EventHandler() {
 
             public void afterEvent(final int event, final int result, final Object data) {
-
+                if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE && etRpwd.getText().length() >= 8) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //提交验证成功，跳转成功页面，否则toast提示
+                            if (result == SMSSDK.RESULT_COMPLETE) {
+                                String account=etPhone.getText().toString().trim();
+                                String password=etRpwd.getText().toString().trim();
+                                UserService uService=new UserService(getApplicationContext());
+                                User user=new User();
+                                user.setAccount(account);
+                                user.setPassword(password);
+                                if (uService.register(user,getApplication()))
+                                {
+                                    Toast.makeText(getApplicationContext(), "注册成功", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                                    finish();
+                                }
+                            } else {
+                                processError(data);
+                            }
+                        }
+                    });
+                } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -175,19 +197,29 @@ public class ZhuCe2Activity extends BaseActivity implements View.OnClickListener
                     });
                 }
 
+            }
+
+            ;
         };
+
         SMSSDK.registerEventHandler(eventHandler);
 
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnVerify:
+
                 if (!isNetworkConnected()) {
                     Toast.makeText(ZhuCe2Activity.this, getString(R.string.smssdk_network_error), Toast.LENGTH_SHORT).show();
                     break;
                 }
-                SMSSDK.submitVerificationCode("86",etPhone.getText().toString().trim(), etCode.getText().toString());
+                if (ckIs.isChecked()) {
+
+                    SMSSDK.submitVerificationCode("86", etPhone.getText().toString().trim(), etCode.getText().toString());
+                }
+
                 break;
             case R.id.tvCode:
                 //获取验证码间隔时间小于1分钟，进行toast提示，在当前页面不会有这种情况，但是当点击验证码返回上级页面再进入会产生该情况
@@ -200,12 +232,12 @@ public class ZhuCe2Activity extends BaseActivity implements View.OnClickListener
                     Toast.makeText(ZhuCe2Activity.this, getString(R.string.smssdk_network_error), Toast.LENGTH_SHORT).show();
                     break;
                 }
-
                 SMSSDK.getVerificationCode("86", etPhone.getText().toString().trim(), null, null);
                 break;
         }
 
     }
+
     private boolean isNetworkConnected() {
         ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
@@ -226,6 +258,7 @@ public class ZhuCe2Activity extends BaseActivity implements View.OnClickListener
         tvToast.setText(text);
         toast.show();
     }
+
     private void processError(Object data) {
         int status = 0;
         // 根据服务器返回的网络错误，给toast提示

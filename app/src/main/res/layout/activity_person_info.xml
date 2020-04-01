@@ -22,11 +22,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-<!--        <ImageView-->
-<!--            -->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="100dp"-->
-<!--            android:src="@mipmap/touxiang"/>-->
         <com.Z.project.view.RoundImageView
             android:layout_gravity="center"
             app:type="circle"
