@@ -21,12 +21,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-       //创建时回调
+         //创建时回调
          //创建字段
         // sql create table table_name(_id integer,name varchar ,age integer);
-        String sql ="create table "+Constants .TABLE_NAME +"(_id integer primary key autoincrement,name varchar ,password varchar,imagehead varchar,sex boolean ,birthday date )";
+        String sql ="create table "+Constants.TABLE_USER+"(_id integer primary key autoincrement,name varchar ,password varchar,imagehead varchar,sex boolean ,birthday date )";
+        String sql1 ="create table "+Constants.TABLE_REALTIME_RECORD+"(currentTime TIMESTAMP default (datetime('now','localtime')),dose float ,longtitude decimal,latitude decimal)";
         db.execSQL(sql);
-
+        db.execSQL(sql1);
     }
 
     @Override

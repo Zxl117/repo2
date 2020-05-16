@@ -36,5 +36,7 @@ public class ConstantValue {
      * 图片
      */
     public static final String KEY_IMGHEAD ="key_imghead" ;
+    public static final String KEY_LOGIIN ="key_login" ;
+
 
 }

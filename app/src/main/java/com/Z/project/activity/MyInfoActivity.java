@@ -107,9 +107,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         tv_birthday.setText(birthday);
         tv_phone.setText(phone);
         imgHead.setImageDrawable(drawable);
-
     }
-
     @Override
     public void onClick(View view) {
         switch (view.getId())

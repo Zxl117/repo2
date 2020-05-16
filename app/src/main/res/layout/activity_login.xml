@@ -9,18 +9,14 @@
     tools:context=".activity.LoginActivity">
     <include layout="@layout/lay_title"/>
 
-
-
     <ImageView
-        android:layout_marginTop="40dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@mipmap/huanbao"
+        android:layout_width="78dp"
+        android:layout_height="83dp"
         android:layout_gravity="center"
-        >
+        android:layout_marginTop="40dp"
+        android:src="@mipmap/huanbao">
 
     </ImageView>
-
 
 
 
@@ -66,22 +62,10 @@
             style="@style/Font_15"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/Line_Height"
+            android:layout_height="40dp"
             android:background="@color/White"
             android:hint="请输入手机号"
             />
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </LinearLayout>
@@ -97,10 +81,6 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/Line"/>
-
-
-
-
 
 
 
@@ -131,28 +111,13 @@
             style="@style/Font_15"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/Line_Height"
+            android:layout_height="40dp"
             android:background="@color/White"
             android:hint="请输入密码"
             />
 
 
-
-
-
-
-
-
-
-
-
-
-
     </LinearLayout>
-
-
-
-
 
     <View
         android:layout_marginRight="20dp"
@@ -163,10 +128,6 @@
         android:background="@color/Line"/>
 
 
-
-
-
-
     <Button
 
         android:id="@+id/btn_login"
@@ -174,9 +135,8 @@
         android:text="登录"
         style="@style/Font_Btn"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/Line_Height"
+        android:layout_height="40dp"
         android:background="@drawable/btn_round_blue_bg"/>
-
 
 
 

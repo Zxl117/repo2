@@ -7,6 +7,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
+import com.Z.project.utils.ConstantValue;
+import com.Z.project.utils.SpUtil;
+import com.Z.project.utils.Utils;
+
 
 public class UserService {
     private DatabaseHelper dbHelper;
@@ -15,17 +19,19 @@ public class UserService {
     }
 
     //登录用
-    public boolean login(String username,String password){
+    public boolean login(String username,String password,Context ctx){
         SQLiteDatabase sdb=dbHelper.getReadableDatabase();
         String sql="select * from user where name=? and password=?";
         Cursor cursor=sdb.rawQuery(sql, new String[]{username,password});
         if(cursor.moveToFirst()==true){
             cursor.close();
             sdb.close();
+            SpUtil.putBoolean(ctx, ConstantValue.KEY_LOGIIN,true);
             return true;
         }
         cursor.close();
         sdb.close();
+        SpUtil.putBoolean(ctx, ConstantValue.KEY_LOGIIN,false);
         return false;
     }
 
@@ -45,20 +51,16 @@ public class UserService {
             return false;
         }
         else {
-
-                   //  String sql="insert into "+ Constants.TABLE_NAME +"(name,password) values(?,?)";
-                 //  Object obj[]={user.getAccount(),user.getPassword()};.
-                // sdb.execSQL(sql, obj);
+            //  String sql="insert into "+ Constants.TABLE_NAME +"(name,password) values(?,?)";
+            // //  Object obj[]={user.getAccount(),user.getPassword()};.
+            // // sdb.execSQL(sql, obj);
             ContentValues values =new ContentValues(); //相当于map
             values.put("name",user.getAccount());
             values.put("password",user.getPassword());
-            sdb.insert(Constants.TABLE_NAME,null,values);
+            sdb.insert(Constants.TABLE_USER,null,values);
             sdb.close();
             return true;
         }
-
-
     }
-
 }
 

@@ -42,7 +42,7 @@
 
         android:textColor="@color/APP_P"
         android:gravity="center"
-         android:textSize="20dp"
+         android:textSize="20sp"
         android:textStyle="bold"
         android:text="CDUT-r Detect.1"
         android:layout_marginTop="20dp"
@@ -124,8 +124,8 @@
                 android:id="@+id/tv_jiliang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="100dp"
-                android:text="0.11"
+                android:textSize="100sp"
+                android:text="  "
                 android:textColor="@color/APP_P"></TextView>
 
 
@@ -667,7 +667,7 @@
 
 
             <LinearLayout
-                android:id="@+id/btn_jisxu"
+                android:id="@+id/btn_jixu"
                 android:background="@drawable/yuan2"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
@@ -746,8 +746,65 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/lay_map"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/lay_back"></include>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/bmapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="-1dp"
+                android:layout_marginBottom="0dp"
+                android:clickable="true">
+
+            </com.baidu.mapapi.map.MapView>
+
+            <include layout="@layout/map_setting"/>
+
+            <TextView
+                android:id="@+id/tv_does"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="  "
+                android:textColor="#03A9F4"
+                android:textSize="70sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_does"
+                android:layout_toRightOf="@+id/tv_does"
+                android:paddingBottom="20dp"
+                android:text="μSv/h"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/iv_waypoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/location"/>
+
+
+
+        </RelativeLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

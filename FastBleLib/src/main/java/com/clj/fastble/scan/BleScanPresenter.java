@@ -99,10 +99,8 @@ public abstract class BleScanPresenter implements BluetoothAdapter.LeScanCallbac
     public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
         if (device == null)
             return;
-
         if (!mHandling)
             return;
-
         Message message = mHandler.obtainMessage();
         message.what = BleMsg.MSG_SCAN_DEVICE;
         message.obj = new BleDevice(device, rssi, scanRecord, System.currentTimeMillis());
@@ -114,12 +112,10 @@ public abstract class BleScanPresenter implements BluetoothAdapter.LeScanCallbac
             correctDeviceAndNextStep(bleDevice);
             return;
         }
-
         if (!TextUtils.isEmpty(mDeviceMac)) {
             if (!mDeviceMac.equalsIgnoreCase(bleDevice.getMac()))
                 return;
         }
-
         if (mDeviceNames != null && mDeviceNames.length > 0) {
             AtomicBoolean equal = new AtomicBoolean(false);
             for (String name : mDeviceNames) {
@@ -137,7 +133,6 @@ public abstract class BleScanPresenter implements BluetoothAdapter.LeScanCallbac
 
         correctDeviceAndNextStep(bleDevice);
     }
-
 
     private void correctDeviceAndNextStep(final BleDevice bleDevice) {
         if (mNeedConnect) {
@@ -179,7 +174,6 @@ public abstract class BleScanPresenter implements BluetoothAdapter.LeScanCallbac
             }
         }
     }
-
     public final void notifyScanStarted(final boolean success) {
         mBleDeviceList.clear();
 
@@ -218,7 +212,6 @@ public abstract class BleScanPresenter implements BluetoothAdapter.LeScanCallbac
         mMainHandler.removeCallbacksAndMessages(null);
         mHandler.removeCallbacksAndMessages(null);
     }
-
     public abstract void onScanStarted(boolean success);
 
     public abstract void onLeScan(BleDevice bleDevice);

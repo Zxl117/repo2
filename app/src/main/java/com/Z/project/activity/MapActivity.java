@@ -1,11 +1,15 @@
 package com.Z.project.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.Z.project.operation.BleOperation;
+import com.Z.project.operation.ConstantValue;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -24,6 +28,7 @@ import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.Z.project.R;
+import com.clj.fastble.data.BleDevice;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,8 +53,7 @@ public class MapActivity extends BaseActivity{
     private LatLng ll2;
     InfoWindow mInfoWindow;
     Handler mHandler =new Handler() ;
-    private float dose;
-
+    BleDevice bleDevice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,15 +81,17 @@ public class MapActivity extends BaseActivity{
      */
     private void runDoes()
     {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run()
-            {
-                dose= (float) (Math.random()*2);
-                tvdoes.setText(String.format("%.1f",dose));
-                mHandler.postDelayed(this,2000);
-            }
-        });
+//        mHandler.post(new Runnable() {
+////            @Override
+////            public void run()
+////            {
+////                tvdoes.setText(String.format("%.1f",0));
+////                mHandler.postDelayed(this,+2000);
+////            }
+////        });
+        bleDevice=getIntent().getParcelableExtra(MainActivity.KEY_DATA);
+        BleOperation bleOperation=new BleOperation(bleDevice,MapActivity.this, ConstantValue.Notify);
+      // bleOperation.notify(MapActivity.this,tvdoes);
 }
 
     private void initLocation() {
@@ -103,7 +109,7 @@ public class MapActivity extends BaseActivity{
                 .fromResource(R.drawable.icon_geo);
         //位置构造方式，将定位模式，定义图标添加其中
         MyLocationConfiguration config = new MyLocationConfiguration(mCurrentMode, true, mCurrentMarker);
-        mBaiduMap.setMyLocationConfigeration(config);  //地图显示定位图标
+        mBaiduMap.setMyLocationConfiguration(config);  //地图显示定位图标
         mBaiduMap.setOnMapClickListener(new BaiduMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
@@ -144,9 +150,6 @@ public class MapActivity extends BaseActivity{
         });
     }
 
-
-
-
     public class MyLocationListener implements BDLocationListener {
 
         @Override
@@ -162,18 +165,15 @@ public class MapActivity extends BaseActivity{
                     .longitude(location.getLongitude())
                     .build();
             // 设置定位数据
-            ll2=new LatLng(location.getLatitude(), location.getLongitude());
-            mBaiduMap.setMyLocationData(locData);
-
-            if (isFirstLoc) {  //如果是第一次定位,就定位到以自己为中心
+              ll2=new LatLng(location.getLatitude(), location.getLongitude());
+              mBaiduMap.setMyLocationData(locData);
+              if (isFirstLoc) {  //如果是第一次定位,就定位到以自己为中心
                 //获取用户当前经纬度
                 ll = new LatLng(location.getLatitude(), location.getLongitude());
-
                 MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);  //更新坐标位置
                 mBaiduMap.animateMapStatus(u);                            //设置地图位置
                 isFirstLoc = false;                                      //取消第一次定位
             }
-
         }
     }
 
@@ -186,7 +186,6 @@ public class MapActivity extends BaseActivity{
     @Override
     protected void onStop() {  //停止地图定位
         super.onStop();
-        // mBaiduMap.setMyLocationEnabled(false);
         mLocationClient.stop();
     }
 

@@ -1,5 +1,8 @@
 package com.Z.project.utils;
 
+import com.clj.fastble.utils.HexUtil;
+import com.mob.tools.utils.Strings;
+
 import java.text.DecimalFormat;
 
 public  class SendMsg2Byte
@@ -9,9 +12,17 @@ public  class SendMsg2Byte
         DecimalFormat dFormat =new DecimalFormat("0.0E0");
         return dFormat.format(Double.parseDouble(string));
     }
-    public static  String sendMsg (String str)
+
+
+    /**
+     * 发送指令到剂量仪
+     * @param str
+     * @param type   类型 A1 剂量率 A2 累计剂量
+     * @return
+     */
+    public static  String sendMsg (String str,String type )
     {
-        String  strings []={"A5","A1","","2E","","","","A1","E5"};
+        String  strings []={"A5",type,"","2E","","","",type,"E5"};
         String strRst=Nor2Sci(str);
         String result ="";
         if (strRst.contains("-"))
@@ -30,7 +41,19 @@ public  class SendMsg2Byte
             result+=string;
         }
         return result;
-
     }
+    public static String  sendMsgT(String hour,String minute,String second,String type )
+    {
+        hour=String.format("%02X",Integer.valueOf(hour));
+        minute=String.format("%02X",Integer.valueOf(minute));
+        second=String.format("%02X",Integer.valueOf(second));
+        String  strings []={"A5",type, hour, minute, second,"00","00",type,"E5"};
+        String result ="";
+        for ( String str: strings)
+        {
+            result+=str;
+        }
+        return  result;
+     }
 
 }

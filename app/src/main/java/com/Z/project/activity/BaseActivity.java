@@ -80,6 +80,9 @@ public class BaseActivity extends FragmentActivity {
     public void HiddenBtnBack() {
         ((Button)findViewById(R.id.btn_back)).setVisibility(View.GONE);
     }
+    public void AppearBtnBack() {
+        ((Button)findViewById(R.id.btn_back)).setVisibility(View.VISIBLE);
+    }
 
     public void requestRuntimePermission(String[] permissions, PermissionListener listener) {
 

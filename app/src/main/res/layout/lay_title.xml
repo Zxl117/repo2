@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="top" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+<LinearLayout
+    android:layout_gravity="top" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <RelativeLayout android:id="@+id/rl_title" android:background="@color/White" android:layout_width="fill_parent" android:layout_height="@dimen/Title_Height">
 
@@ -15,8 +16,13 @@
             ></ImageView>
 
 
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="45.0dip"
+            android:layout_height="fill_parent"
+            android:background="@mipmap/fanhui"
+            android:onClick="On_Back" />
 
-        <Button android:id="@+id/btn_back" android:background="@mipmap/fanhui" android:layout_width="45.0dip" android:layout_height="fill_parent" android:onClick="On_Back" />
         <TextView android:id="@+id/tv_title" android:textColor="@color/Black" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/Font_Title" />
 
 
@@ -24,8 +30,6 @@
 
 
         <TextView android:id="@+id/tv_right"  android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_marginRight="10dp" style="@style/Font_15" />
-
-
 
 
         <ImageView

@@ -80,7 +80,6 @@ public class HexUtil {
             j++;
             out[i] = (byte) (f & 0xFF);
         }
-
         return out;
     }
 
@@ -104,7 +103,8 @@ public class HexUtil {
         int length = hexString.length() / 2;
         char[] hexChars = hexString.toCharArray();
         byte[] d = new byte[length];
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++)
+        {
             int pos = i * 2;
             d[i] = (byte) (charToByte(hexChars[pos]) << 4 | charToByte(hexChars[pos + 1]));
         }

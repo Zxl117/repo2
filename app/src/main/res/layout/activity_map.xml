@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="50"
+            android:text="  "
             android:textColor="#03A9F4"
             android:textSize="70sp"
             android:textStyle="bold" />
@@ -44,7 +44,7 @@
             android:layout_alignBottom="@+id/tv_does"
             android:layout_toRightOf="@+id/tv_does"
             android:paddingBottom="20dp"
-            android:text="μSv"
+            android:text="μSv/h"
             android:textSize="30sp"
             android:textStyle="bold" />
         <ImageView
@@ -55,6 +55,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="30dp"
             android:src="@drawable/location"/>
+
 
 
     </RelativeLayout>

@@ -31,12 +31,10 @@ public class LocalDataActivity extends BaseActivity {
     private void init() {
 
         spnner.setVisibility(View.VISIBLE);
-
+        //需要填入可选日期。
         String[] arr = {"2020-01-01", "2020-01-02", "2020-01-03"};
         spnner.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,arr));
-
         lvList.setAdapter(new LocalDataAdapter(this));
-
     }
 }
